@@ -1,24 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.59" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lwz-ta-EUK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.45"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--十月-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20180529" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-kJ-ah0">
+                                <rect key="frame" x="0.0" y="63" width="188" height="189"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20190205" translatesAutoresizingMaskIntoConstraints="NO" id="hhp-U4-yL3">
+                                <rect key="frame" x="187" y="63" width="189" height="189"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WBf-qs-dxw">
+                                <rect key="frame" x="0.0" y="260" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="574431896.88917994">
+                                    <!--2019-03-16 12:24:56 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="546865200">
+                                    <!--2018-05-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="573908400">
+                                    <!--2019-03-10 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="32E-Ve-FRc">
+                                <rect key="frame" x="77" y="481" width="221" height="31"/>
+                                <connections>
+                                    <action selector="dateSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="SR4-Qc-znZ"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOm-n5-NPG">
+                                <rect key="frame" x="0.0" y="481" width="79" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehs-aX-Ilu">
+                                <rect key="frame" x="296" y="481" width="79" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAP-SO-vgd">
+                                <rect key="frame" x="112" y="541" width="51" height="31"/>
+                                <connections>
+                                    <action selector="change:" destination="BYZ-38-t0r" eventType="valueChanged" id="LMD-9M-xd5"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftl-3T-wnI">
+                                <rect key="frame" x="0.0" y="541" width="102" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WBf-qs-dxw" firstAttribute="top" secondItem="hhp-U4-yL3" secondAttribute="bottom" constant="8" symbolic="YES" id="90v-3x-AKe"/>
+                            <constraint firstItem="32E-Ve-FRc" firstAttribute="leading" secondItem="UOm-n5-NPG" secondAttribute="trailing" id="AmU-ci-a26"/>
+                            <constraint firstItem="WBf-qs-dxw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="260" id="BnD-7u-tp6"/>
+                            <constraint firstItem="hhp-U4-yL3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-1" id="Hrs-Wz-VKN"/>
+                            <constraint firstItem="ehs-aX-Ilu" firstAttribute="leading" secondItem="32E-Ve-FRc" secondAttribute="trailing" id="InD-t1-wOw"/>
+                            <constraint firstItem="WBf-qs-dxw" firstAttribute="trailing" secondItem="ehs-aX-Ilu" secondAttribute="trailing" id="J5K-Fk-qk2"/>
+                            <constraint firstItem="Ftl-3T-wnI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LoV-Qg-8kE"/>
+                            <constraint firstItem="ulz-kJ-ah0" firstAttribute="top" secondItem="hhp-U4-yL3" secondAttribute="top" id="NSV-6g-aOa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ftl-3T-wnI" secondAttribute="trailing" symbolic="YES" id="STs-FN-1xR"/>
+                            <constraint firstItem="hhp-U4-yL3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="187" id="Suh-k2-guR"/>
+                            <constraint firstItem="WBf-qs-dxw" firstAttribute="leading" secondItem="UOm-n5-NPG" secondAttribute="leading" id="TG7-bw-eK6"/>
+                            <constraint firstItem="ulz-kJ-ah0" firstAttribute="leading" secondItem="WBf-qs-dxw" secondAttribute="leading" id="TOT-Wg-SFH"/>
+                            <constraint firstItem="Ftl-3T-wnI" firstAttribute="top" secondItem="32E-Ve-FRc" secondAttribute="bottom" constant="30" id="U5p-DN-tsK"/>
+                            <constraint firstItem="WAP-SO-vgd" firstAttribute="leading" secondItem="Ftl-3T-wnI" secondAttribute="trailing" constant="10" id="WSK-K3-uoD"/>
+                            <constraint firstItem="ehs-aX-Ilu" firstAttribute="top" secondItem="WBf-qs-dxw" secondAttribute="bottom" constant="5" id="YAG-aH-YXD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hhp-U4-yL3" secondAttribute="trailing" constant="-17" id="d6P-Xu-yVl"/>
+                            <constraint firstItem="UOm-n5-NPG" firstAttribute="top" secondItem="WBf-qs-dxw" secondAttribute="bottom" constant="5" id="d6X-ck-LRM"/>
+                            <constraint firstItem="UOm-n5-NPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h0G-zk-YQq"/>
+                            <constraint firstAttribute="trailing" secondItem="ehs-aX-Ilu" secondAttribute="trailing" id="iJZ-hO-XZm"/>
+                            <constraint firstItem="WAP-SO-vgd" firstAttribute="top" secondItem="32E-Ve-FRc" secondAttribute="bottom" constant="30" id="k8N-Oy-pUk"/>
+                            <constraint firstItem="32E-Ve-FRc" firstAttribute="top" secondItem="WBf-qs-dxw" secondAttribute="bottom" constant="5" id="mAd-gA-EQU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ulz-kJ-ah0" secondAttribute="trailing" constant="187" id="n6d-gD-wNV"/>
+                            <constraint firstItem="WBf-qs-dxw" firstAttribute="top" secondItem="ulz-kJ-ah0" secondAttribute="bottom" constant="8" symbolic="YES" id="nbz-z4-BoD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="十月" id="qoG-Ym-Gnf"/>
+                    <connections>
+                        <outlet property="changeimg" destination="hhp-U4-yL3" id="nXQ-fp-CyW"/>
+                        <outlet property="datepicker" destination="WBf-qs-dxw" id="P7Q-GY-S82"/>
+                        <outlet property="dateslider" destination="32E-Ve-FRc" id="Jrb-dh-MIV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="27.436281859070466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1be-3O-sqi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lwz-ta-EUK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OpK-qu-For">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ulf-ha-2ek"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QtW-Xl-oTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="20180529" width="1108" height="1477"/>
+        <image name="20190205" width="1108" height="1477"/>
+    </resources>
 </document>
