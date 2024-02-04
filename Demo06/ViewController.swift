@@ -9,57 +9,64 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var datepicker: UIDatePicker!
-    @IBOutlet weak var dateslider: UISlider!
-    @IBOutlet weak var changeimg: UIImageView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var dateSlider: UISlider!
+    @IBOutlet weak var changeImg: UIImageView!
+    
     let dateFormatter = DateFormatter()
-    var dateString:String = ""
-    var timer:Timer?
-    var num=0
-    var num1=0
-    let img=["20180529","20180610","20180706","20180820","20180912","20181010","20181117","20181210","20190126","20190205"]
+    var dateString: String = ""
+    var timer: Timer?
+    var index = 0
+    var selectedIndex = 0
+    let img = ["20180529","20180610","20180706","20180820","20180912","20181010","20181117","20181210","20190126","20190205"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         time()
-        datepicker.locale=Locale(identifier: "zh_TW")
+        datePicker.locale = Locale(identifier: "zh_TW")
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        dateslider.isContinuous=false
-        datepicker.isEnabled=false
+        dateSlider.isContinuous = false
+        datePicker.isEnabled = false
+        datePicker.contentHorizontalAlignment = .center
     }
-    func ticker(){
-        if num>=img.count{
-            num=0
-            switchtime(num2: num)
-            changeimg.image=UIImage(named: img[num])
+    
+    func ticker() {
+        if index >= img.count{
+            index = 0
+            switchtime(index)
+            changeImg.image = UIImage(named: img[index])
         }else{
-            switchtime(num2: num)
-            changeimg.image=UIImage(named: img[num])
+            switchtime(index)
+            changeImg.image = UIImage(named: img[index])
         }
-        num+=1
+        index += 1
     }
+    
     @IBAction func change(_ sender: UISwitch) {
         if sender.isOn {
             time()
-            num=num1
-            dateslider.isEnabled=false
-        }else{
-            dateslider.isEnabled=true
+            index = selectedIndex
+            dateSlider.isEnabled=false
+        } else {
+            dateSlider.isEnabled=true
             timer?.invalidate()
         }
     }
     
     @IBAction func dateSlider(_ sender: UISlider) {
         sender.value.round()
-        num1=Int(sender.value)
-        changeimg.image=UIImage(named: img[num1])
-        print(num1)
-        switchtime(num2: num1)
+        selectedIndex = Int(sender.value)
+        changeImg.image = UIImage(named: img[selectedIndex])
+        print(selectedIndex)
+        switchtime(selectedIndex)
     }
+    
     func time(){
-        timer=Timer.scheduledTimer(withTimeInterval: 2, repeats: true){(timer) in self.ticker()}
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true){(timer) in self.ticker()}
     }
-    func switchtime(num2:Int) {
-        switch num2 {
+    
+    func switchtime(_ index:Int) {
+        switch index {
         case 0:
             dateString = "2018/05/29"
         case 1:
@@ -84,8 +91,10 @@ class ViewController: UIViewController {
             dateString = "2019/03/10"
         }
         let date = dateFormatter.date(from: dateString)
-        datepicker.date=date!
+        datePicker.date = date!
+        dateSlider.value = Float(index)
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
     }
